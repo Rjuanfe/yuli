@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carta para Yuliana</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(120deg, #ffe6f0, #ffd1dc);
+      color: #2c2c2c;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+    header {
+      background: #ff85a2;
+      padding: 60px 20px 30px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+    header h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5em;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.3em;
+      font-weight: 300;
+    }
+    .musica-btn {
+      background-color: #ff4b91;
+      color: white;
+      padding: 12px 25px;
+      font-size: 1em;
+      font-weight: bold;
+      border: none;
+      border-radius: 40px;
+      cursor: pointer;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, background-color 0.3s ease;
+      margin-top: 15px;
+    }
+    .musica-btn:hover {
+      background-color: #e04383;
+      transform: scale(1.05);
+    }
+    .carta {
+      max-width: 800px;
+      margin: 60px auto;
+      background: #ffffff;
+      padding: 50px 60px;
+      border-radius: 20px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+      line-height: 1.8;
+      font-size: 1.2em;
+      transform: scaleY(0);
+      transform-origin: top;
+      animation: despliegue 1.5s ease-out forwards;
+      position: relative;
+      z-index: 2;
+    }
+    @keyframes despliegue {
+      to {
+        transform: scaleY(1);
+      }
+    }
+    .carta p {
+      margin-bottom: 25px;
+    }
+    .firma {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5em;
+      text-align: right;
+      margin-top: 50px;
+      color: #ff4b91;
+    }
+    .botones {
+      text-align: center;
+      margin-top: 50px;
+    }
+    .botones a,
+    .botones button {
+      text-decoration: none;
+      background-color: #ff4b91;
+      color: white;
+      padding: 15px 35px;
+      margin: 10px;
+      border-radius: 50px;
+      font-size: 1em;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      border: none;
+      cursor: pointer;
+    }
+    .botones a:hover,
+    .botones button:hover {
+      background-color: #e04383;
+      transform: scale(1.05);
+    }
+    #regalo {
+      display: none;
+      margin-top: 30px;
+      text-align: center;
+    }
+    #regalo img {
+      max-width: 250px;
+      border-radius: 10px;
+    }
+    #regalo p {
+      margin-top: 15px;
+      font-size: 1.2em;
+    }
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #fff0f5;
+      color: #555;
+      font-size: 1em;
+      margin-top: 60px;
+      border-top: 2px solid #ffb6c1;
+    }
+
+    /* Corazones flotando */
+    .corazon {
+      position: fixed;
+      top: -50px;
+      color: #ff69b4;
+      font-size: 24px;
+      animation: flotar 10s linear infinite;
+      z-index: 1;
+      opacity: 0.8;
+    }
+    @keyframes flotar {
+      0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(120vh) translateX(-50px);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.3em;
+      }
+      .carta,
+      .firma,
+      .botones a,
+      .botones button {
+        font-size: 1em;
+        padding: 12px 20px;
+      }
+      .carta {
+        padding: 30px 20px;
+        margin: 30px 10px;
+      }
+      .firma {
+        font-size: 1.8em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Música de fondo -->
+  <audio id="audio" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-tomorrow.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio HTML5.
+  </audio>
+
+  <header>
+    <h1>Para mi hermana Yuliana 💗</h1>
+    <p>Desde Colombia hasta Dubái, con todo mi amor</p>
+    <button class="musica-btn" onclick="toggleAudio()">🎵 Activar / Detener Música</button>
+  </header>
+
+  <!-- corazones flotando -->
+  <div class="corazon" style="left: 10%;">💗</div>
+  <div class="corazon" style="left: 25%;">💕</div>
+  <div class="corazon" style="left: 40%;">💖</div>
+  <div class="corazon" style="left: 55%;">💘</div>
+  <div class="corazon" style="left: 70%;">💞</div>
+  <div class="corazon" style="left: 85%;">❤️</div>
+
+  <section class="carta">
+    <p>Querida Yuli, aunque estés lejos, estás siempre en mi corazón y en mis pensamientos. Feliz cumpleaños, hermana increíble! Espero que este día sea tan especial como tú, lleno de amor, risas y aventuras.</p>
+    <p>Te extraño mucho y ya quiero verte aquí en Colombia para abrazarte fuerte y compartir momentos juntos. Cada día sin ti es un día sin luz, pero tu amor y tu cariño iluminan mi vida de manera increíble.</p>
+    <p>Gracias por ser esa hermana que siempre me apoya y me ama incondicionalmente. Ya quiero que llegues aquí para hacerte deditos, galletas y pizza, y disfrutar juntos de un día lleno de amor y diversión.</p>
+    <p class="firma">Te amo mucho, hermana, eres la mejor 🎉💕🎂😘💗🙏🎁😂👀<br>Tu hermano 💗</p>
+
+    <div class="botones">
+      <a href="fotos.html">Ver fotos juntos</a>
+      <button onclick="mostrarRegalo()">🎁 Ver regalo sorpresa</button>
+    </div>
+
+    <div id="regalo">
+      <img src="https://media.giphy.com/media/YTbZzCkRQCEJa/giphy.gif" alt="Regalo">
+      <p>¡SORPRESA! No es físico... ¡pero prepárate para tremendo abrazo y muchos deditos cuando llegues! 🤣🍕💞</p>
+    </div>
+  </section>
+
+  <footer>
+    Hecho con amor por tu hermano desde Colombia 🇨🇴
+  </footer>
+
+  <script>
+    function mostrarRegalo() {
+      document.getElementById('regalo').style.display = 'block';
+    }
+    function toggleAudio() {
+      const audio = document.getElementById('audio');
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    }
+  </script>
+</body>
+</html>
